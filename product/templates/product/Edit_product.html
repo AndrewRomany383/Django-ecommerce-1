@@ -1,0 +1,41 @@
+{% extends 'product/base.html' %}
+{% block content %}
+
+
+<h1 class="text-2xl m-10 font-bold">Update Product</h1>
+<form class="w-3/5 bg-white shadow-md m-10 px-8 py-8" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="mb-4">
+    <label class="block text-grey-700 text-sm font-bold mb-2">Product Name</label>
+  <input class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700" placeholder="{{product.name}}" type="text" name="name" id="name">
+    <label class="block text-grey-700 text-sm font-bold mb-2">Product Price</label>
+  <input class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700" placeholder="{{product.price}}" type="text" name="price" id="price">
+    <label class="block text-grey-700 text-sm font-bold mb-2">Product description</label>
+  <input class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700" placeholder="{{product.description}}" type="text" name="description" id="description">
+    <label class="block text-grey-700 text-sm font-bold mb-2">Product Specifications</label>
+  <input class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700" placeholder="{{product.specs}}" type="text" name="specs" id="specs">
+    <label class="block text-grey-700 text-sm font-bold mb-2">Product Image</label>
+    <img class="w-20 h-20" src="{{product.img.url}}" alt="">
+  <input class="shadow appearance-none border rounded py-2 px-3 mr-10 text-grey-700" type="file" accept="image/*" name="upload" id="upload">
+  <input class="bg-green-500 text-white px-5 py-2" type="submit" name="Update product" value="Update product" id="">
+  </div>
+</form>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

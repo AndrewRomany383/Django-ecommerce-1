@@ -1,0 +1,45 @@
+{% extends 'product/base.html' %}
+{% block content %}
+
+<h1 class="text-2xl m-10 font-bold">Add Product</h1>
+<div class="container py-5">
+  <form class="w-3/5 bg-white shadow-md m-10 px-8 py-8" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-4">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Product name</label>
+        <div class="shadow appearance-none border rounded w-1/4 py-2 px-3 mr-10 text-grey-700">
+            {{ form.name }}
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Price</label>
+        <div class="shadow appearance-none border rounded w-1/4 py-2 px-3 mr-10 text-grey-700">
+            {{ form.price }}
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Description</label>
+        <div class="shadow appearance-none border rounded w-1/4 py-2 px-3 mr-10 text-grey-700">
+            {{ form.description }}
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Specifications</label>
+        <div class="shadow appearance-none border rounded w-1/4 py-2 px-3 mr-10 text-grey-700">
+            {{ form.specs}}
+        </div>
+    </div>
+    <div class="mb-4">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Image</label>
+        <div class="shadow appearance-none border rounded w-1/4 py-2 px-3 mr-10 text-grey-700">
+            {{ form.img }}
+        </div>
+    </div>
+    <div class="mb-4">
+            {{ form.seller_name }}
+    </div>
+    <input class="bg-green-500 text-white px-5 py-2" type="submit" name="Add product" value="submit" id="">
+  </form>
+</div>
+
+{% endblock %}
