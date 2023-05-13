@@ -1,0 +1,36 @@
+{% extends 'product/base.html' %}
+{% block content %}
+
+<div class="text-2*1 m-10 p-10 font-bold">My listings</div>
+{% for one in product %}
+<div class="itemcontainer flex shadow-lg m-10 p-10">
+    <span class="w-1/5">
+        <img class="w-40 h-40" src="{{one.img.url}}" alt="">
+    </span>
+    <span class="w-2/5">
+        <div class="font-bold text-grey-700">{{one.name}}</div>
+        <div class="text-green-500">{{one.price}}</div>
+    </span>
+    <span>
+        <a class="bg-green-500 text-white font-bold px-5 py-2" href="{% url 'product:UpdateProduct' one.id %}">edit</a>
+        <a class="bg-red-500 text-white font-bold px-5 py-2" href="{% url 'product:DeleteProduct' one.id %}">delete</a>
+    </span>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrustBuy</title>
+  <link rel="stylesheet" href="{% static 'product/styles.css' %}">
+</head>
+<body>
+
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                <div>
+                    <a href="#" class="flex items-center px-2 py-4 ">
+                        
+                        <a href="{% url 'product:products' %}"><img class="h-20 w-20" src="{{logo.logo.url}}"></a>
+                        <span class="text-gray-500 text-lg">TrustBuy</span>
+                    </a>
+                </div>
+                <div class="items-center flex space-x-1">
+                    <a href="{% url 'product:products' %}" class="py-4 px-2 text-gray-500 font-semibold border-b-4 border-green-500">Home</a>
+                    <a href="{% url 'product:AddProduct' %}" class="py-4 px-2 text-gray-500 font-semibold">Add product</a>
+                    <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contact us</a>
+                    {% if user.is_authenticated %}
+                      <a href="{% url 'User:logout' %}" class="py-4 px-2 text-gray-500 font-semibold">Logout</a>
+                      <a href="{% url 'User:profile' %}" class="py-4 px-2 text-gray-500 font-semibold">profile</a>
+                      <a href="{% url 'product:mylistings' %}" class="py-4 px-2 text-gray-500 font-semibold">My listings</a>
+                    {% else %}
+                      <a href="{% url 'User:login' %}" class="py-4 px-2 text-gray-500 font-semibold">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
